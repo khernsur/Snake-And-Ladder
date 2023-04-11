@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/InGameid"
+    android:background="@color/teal_700"
+    tools:context=".InGamePageActivity">
+
+
+    <Button
+        android:id="@+id/back_button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#207E24"
+        android:text="BACK"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.513"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.991" />
+
+    <ImageView
+        android:id="@+id/boardImageView"
+        android:layout_width="396dp"
+        android:layout_height="395dp"
+        android:layout_marginTop="160dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/board"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <FrameLayout
+        android:id="@+id/player1FrameLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="16dp"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@id/boardImageView"
+        app:layout_constraintStart_toStartOf="@id/boardImageView"
+        app:layout_constraintTop_toTopOf="@id/boardImageView">
+
+        <View
+            android:id="@+id/player1View"
+            android:layout_width="28dp"
+            android:layout_height="30dp"
+            android:background="@drawable/player1_shape" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/player2FrameLayout"
+        android:layout_width="387dp"
+        android:layout_height="432dp"
+        android:layout_margin="16dp"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@id/boardImageView"
+        app:layout_constraintStart_toStartOf="@id/boardImageView"
+        app:layout_constraintTop_toTopOf="@id/boardImageView">
+
+        <View
+            android:id="@+id/player2View"
+            android:layout_width="29dp"
+            android:layout_height="30dp"
+            android:background="@drawable/player2_shape" />
+
+    </FrameLayout>
+    <TextView
+        android:id="@+id/positionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Position: 1"
+        android:textSize="22dp"
+        android:textColor="#070707"
+        app:layout_constraintEnd_toEndOf="@id/boardImageView"
+        app:layout_constraintStart_toStartOf="@id/boardImageView"
+        app:layout_constraintTop_toBottomOf="@id/boardImageView"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <TextView
+        android:id="@+id/winnerTextView"
+        android:layout_width="99dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="44dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        android:textSize="22dp"
+        app:layout_constraintStart_toStartOf="@id/boardImageView"
+        app:layout_constraintTop_toBottomOf="@id/boardImageView" />
+
+    <Button
+        android:id="@+id/rollButton"
+        android:layout_width="138dp"
+        android:layout_height="55dp"
+        android:backgroundTint="#207E24"
+        android:text="Roll Dice"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/boardImageView"
+        app:layout_constraintVertical_bias="0.438" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
