@@ -1,10 +1,12 @@
 package ph.stacktreck.snakeandladders.ternida.johnkenneth
 
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
-import android.os.Bundle
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.widget.Button
+import android.widget.TextView
 
 class LeaderboardsActivity : AppCompatActivity(){
 
@@ -13,6 +15,12 @@ class LeaderboardsActivity : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_leaderboard)
+
+        val backtohomepageButton = findViewById<Button>(R.id.back_button)
+        backtohomepageButton.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
 
         // Initialize SharedPreferences instance
         prefs = getSharedPreferences("myPrefs", Context.MODE_PRIVATE)

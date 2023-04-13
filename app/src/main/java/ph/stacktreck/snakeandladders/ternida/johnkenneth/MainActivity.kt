@@ -1,22 +1,30 @@
 package ph.stacktreck.snakeandladders.ternida.johnkenneth
 
-import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.*
+import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
     private lateinit var sharedPreferences: SharedPreferences
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
+        bottomNavigationView.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.leaderboard -> {
+                    // Handle click on leaderboard item
+                    startActivity(Intent(this, LeaderboardsActivity::class.java))
+                    true
+                }
+                else -> false
+            }
+        }
         val startButton = findViewById<Button>(R.id.start_button)
         startButton.setOnClickListener {
             val intent = Intent(this, PlayerEntryActivity::class.java)
@@ -25,29 +33,3 @@ class MainActivity : AppCompatActivity() {
 
     }
 }
-
-
-
-
-
-//        sharedPreferences = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
-//        // Save players' names
-//        val editor = sharedPreferences.edit()
-//        editor.putString(PLAYER_1_KEY, player1Name)
-//        editor.putString(PLAYER_2_KEY, player2Name)
-//        editor.apply()
-//
-//        // Retrieve players' names
-//        val player1Name = sharedPreferences.getString(PLAYER_1_KEY, null)
-//        val player2Name = sharedPreferences.getString(PLAYER_2_KEY, null)
-//
-//        // Save winners' list
-//        val winnersSet = mutableSetOf<String>()
-//        winnersSet.addAll(winnersList)
-//        val editor = sharedPreferences.edit()
-//        editor.putStringSet(WINNERS_KEY, winnersSet)
-//        editor.apply()
-//
-//        // Retrieve winners' list
-//        val winnersSet = sharedPreferences.getStringSet(WINNERS_KEY, emptySet())
-//        val winnersList = winnersSet.toList()
